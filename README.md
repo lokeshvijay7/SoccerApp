@@ -1,62 +1,83 @@
-# Soccer Matches App
+# ⚽ SportsOrca Internship Task - Upcoming Soccer Matches Web App
 
-This project displays a list of upcoming soccer matches fetched from a backend API.
+This is my submission for the **Full Stack Development Internship at SportsOrca**.
 
-## Project Structure
+---
 
-- `backend/`: Node.js Express backend server fetching match data from a free API.
-- `frontend/`: React frontend built with Vite and styled with Tailwind CSS.
+## 📝 Task Brief
 
-## Getting Started
+> Create a basic web page displaying a list of upcoming matches for a specific sport fetched from a freely available API.  
+> Optional: Create a backend to fetch the API data and connect with frontend.  
+> Deadline: May 30, 2025
 
-### Backend
+---
 
-1. Navigate to the `backend` directory:
-   ```
-   cd backend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the backend server:
-   ```
-   npm run dev
-   ```
-   The backend server will run on port 5000 by default.
+## ✅ What I Have Built
 
-### Frontend
+I chose **Soccer** as the sport and built a **responsive web app** that displays upcoming soccer matches with:
 
-1. Navigate to the `frontend` directory:
-   ```
-   cd frontend
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the frontend development server:
-   ```
-   npm run dev
-   ```
-   The frontend will run on `http://localhost:5173`.
+- 🧠 **Real-time Search**: Filter teams instantly
+- 🧾 **Match Info**: Team names and match date/time
+- 🌐 **Freely Available API** used for fetching data
+- 🖥️ **Optional Backend** with Express.js to serve the data
+- 📸 **Clean UI** and fully tested with Postman
 
-### Usage
+---
 
-- Open your browser and go to `http://localhost:5173`.
-- The app will fetch upcoming soccer matches from the backend and display them.
-- Use the search input to filter matches by team name.
+## 🌐 API Used
 
-## Notes
+I have used a public soccer API for upcoming matches:
 
-- Ensure the backend server is running before starting the frontend to avoid fetch errors.
-- The backend fetches data from the Scorebat video API and serves the top 10 matches.
+**API:** [https://www.scorebat.com/video-api/v3/](https://www.scorebat.com/video-api/v3/)
 
-## Dependencies
+> No authentication required. Returns JSON data for upcoming soccer matches.
 
-- Backend: express, cors, axios
-- Frontend: react, react-dom, vite, tailwindcss
+---
 
-## License
+## 🖼️ Project Screenshot
 
-This project is open source and free to use.
+### 🎯 Output UI
+![UI Output](screenshots/output.png)
+
+### 🧪 Postman Test
+![Postman Test](postman/postman_ss.png)
+
+---
+
+## 🚀 Tech Stack
+
+| Frontend | Backend (Optional) | Tools |
+|----------|--------------------|-------|
+| HTML, CSS, JS | Node.js, Express.js | Postman, Git, GitHub |
+
+---
+
+## 📁 Folder Structure
+
+📦 project-root
+┣ 📂 client # Frontend code
+┣ 📂 server # Backend (optional)
+┣ 📂 screenshots # UI output image
+┣ 📂 postman # Postman screenshot & collection
+┣ 📜 README.md
+┗ 📜 .gitignor
+
+## 📮 How to Run
+
+1. Clone the repo:
+```bash
+git clone https://github.com/lokeshvijay7/SoccerApp.git
+cd SoccerApp
+
+2.Frontend
+cd frontend
+npm run dev
+
+3.Backend 
+cd backend
+npm run dev
+
+Developer Info
+ Name: Lokesh K V
+ Email: loki7cr@gmail.com
+ GitHub: github.com/lokeshvijay7
