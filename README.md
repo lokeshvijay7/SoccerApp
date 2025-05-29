@@ -1,4 +1,4 @@
-# ⚽ SportsOrca Internship Task - Upcoming Soccer Matches Web App
+# ⚽ Upcoming Soccer Matches Web App
 
 This is my submission for the **Full Stack Development Internship at SportsOrca**.
 
@@ -6,9 +6,8 @@ This is my submission for the **Full Stack Development Internship at SportsOrca*
 
 ## 📝 Task Brief
 
-> Create a basic web page displaying a list of upcoming matches for a specific sport fetched from a freely available API.  
-> Optional: Create a backend to fetch the API data and connect with frontend.  
-> Deadline: May 30, 2025
+A responsive full-stack web app to view live soccer matches, teams, and details with real-time search functionality.
+
 
 ---
 
@@ -19,7 +18,7 @@ I chose **Soccer** as the sport and built a **responsive web app** that displays
 - 🧠 **Real-time Search**: Filter teams instantly
 - 🧾 **Match Info**: Team names and match date/time
 - 🌐 **Freely Available API** used for fetching data
-- 🖥️ **Optional Backend** with Express.js to serve the data
+- 🖥️ **Backend** with Express.js to serve the data
 - 📸 **Clean UI** and fully tested with Postman
 
 ---
@@ -37,7 +36,7 @@ I have used a public soccer API for upcoming matches:
 ## 🖼️ Project Screenshot
 
 ### 🎯 Output UI
-![UI Output](screenshots/output.png)
+![UI Output](screenshots\output-3.png)
 
 ### 🧪 Postman Test
 ![Postman Test](postman/postman_ss.png)
@@ -51,16 +50,6 @@ I have used a public soccer API for upcoming matches:
 | HTML, CSS, JS | Node.js, Express.js | Postman, Git, GitHub |
 
 ---
-
-## 📁 Folder Structure
-
-📦 project-root
-┣ 📂 client # Frontend code
-┣ 📂 server # Backend (optional)
-┣ 📂 screenshots # UI output image
-┣ 📂 postman # Postman screenshot & collection
-┣ 📜 README.md
-┗ 📜 .gitignor
 
 ## 📮 How to Run
 
@@ -76,6 +65,8 @@ npm run dev
 3.Backend 
 cd backend
 npm run dev
+
+---
 
 Developer Info
  Name: Lokesh K V
