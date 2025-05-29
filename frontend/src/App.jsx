@@ -9,7 +9,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading for better UX
     setTimeout(() => {
       fetch('http://localhost:5000/api/matches')
         .then(res => res.json())
@@ -36,7 +35,6 @@ function App() {
         py: { xs: 4, lg: 10 },
       }}
     >
-      {/* Animated Background Elements */}
       <Box
         sx={{
           position: 'absolute',
@@ -94,7 +92,6 @@ function App() {
         />
       </Box>
 
-      {/* Grid Pattern Overlay */}
       <Box
         sx={{
           position: 'absolute',
@@ -107,7 +104,6 @@ function App() {
       />
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        {/* Header Section */}
         <Box sx={{ mb: 8, textAlign: 'center' }}>
           <Box sx={{ display: 'inline-block', position: 'relative', mb: 2 }}>
             <Box
@@ -203,7 +199,6 @@ function App() {
           </Box>
         </Box>
 
-        {/* Search Section */}
         <Box sx={{ maxWidth: 600, mx: 'auto', mb: 8 }}>
           <TextField
             fullWidth
@@ -242,16 +237,15 @@ function App() {
           />
         </Box>
 
-        {/* Loading State */}
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 10 }}>
             <CircularProgress color="primary" size={64} />
           </Box>
         ) : (
-          <Grid container spacing={4}>
+          <Grid container spacing={8}>
             {filtered.length > 0 ? (
               filtered.map((match, i) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={i} sx={{ animationDelay: `${i * 100}ms`, animationName: 'fadeIn', animationFillMode: 'forwards', animationTimingFunction: 'ease-out' }}>
+                <Grid item xs={16} sm={6} md={4} lg={3} key={i} sx={{ animationDelay: `${i * 100}ms`, animationName: 'fadeIn', animationFillMode: 'forwards', animationTimingFunction: 'ease-out' }}>
                   <MatchCard match={match} />
                 </Grid>
               ))

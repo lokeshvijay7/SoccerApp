@@ -10,7 +10,7 @@ app.use(cors());
 app.get('/api/matches', async (req, res) => {
   try {
     const response = await axios.get('https://www.scorebat.com/video-api/v3/');
-    res.json(response.data.response.slice(0, 10)); // Send top 10
+    res.json(response.data.response.slice(0, 10)); 
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch matches' });
   }
