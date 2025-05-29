@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { Card, CardMedia, CardContent, Typography, Box, Button, Chip, Stack } from '@mui/material';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function MatchCard({ match }) {
-  const { title, date, thumbnail } = match;
+  const { title, date, thumbnail, location, league, description } = match;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const formattedDate = new Date(date).toLocaleString('en-US', {
     weekday: 'short',
     month: 'short',
@@ -14,7 +17,6 @@ function MatchCard({ match }) {
   });
 
   const formatTeamNames = (title) => {
-    // Extract team names from title (assuming format like "Team A vs Team B")
     const teams = title.split(' vs ');
     return teams.length === 2 ? teams : [title, ''];
   };
@@ -22,104 +24,151 @@ function MatchCard({ match }) {
   const [team1, team2] = formatTeamNames(title);
 
   return (
-    <div
-      className="group relative"
+    <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      sx={{
+        position: 'relative',
+        borderRadius: 3,
+        boxShadow: isHovered ? 6 : 3,
+        transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+        backdropFilter: 'blur(10px)',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+      }}
     >
-      {/* Glow Effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-      
-      {/* Main Card */}
-      <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:-translate-y-2">
-        
-        {/* Image Section */}
-        <div className="relative h-48 overflow-hidden">
-          {!imageLoaded && (
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-              <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-            </div>
-          )}
-          <img
-            src={thumbnail}
-            alt={title}
-            className={`w-full h-full object-cover transition-all duration-700 ${
-              imageLoaded 
-                ? 'opacity-100 scale-100' 
-                : 'opacity-0 scale-110'
-            } ${isHovered ? 'scale-110' : 'scale-100'}`}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageLoaded(true)}
-          />
-          
-          {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          
-          {/* Live Badge */}
-          <div className="absolute top-4 right-4">
-            <div className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg animate-pulse">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
-                <span>Live</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Box sx={{ position: 'relative' }}>
+        {!imageLoaded && (
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              bgcolor: 'rgba(59, 130, 246, 0.2)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 1,
+            }}
+          >
+            <Box
+              sx={{
+                width: 40,
+                height: 40,
+                border: '4px solid rgba(255, 255, 255, 0.3)',
+                borderTopColor: '#3b82f6',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite',
+              }}
+            />
+          </Box>
+        )}
+        <CardMedia
+          component="img"
+          height="180"
+          image={thumbnail}
+          alt={title}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageLoaded(true)}
+          sx={{
+            opacity: imageLoaded ? 1 : 0,
+            transition: 'opacity 0.7s ease',
+            transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+            transitionProperty: 'opacity, transform',
+          }}
+        />
+        <Chip
+          icon={<LiveTvIcon />}
+          label="Live"
+          color="error"
+          size="small"
+          sx={{
+            position: 'absolute',
+            top: 12,
+            right: 12,
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            boxShadow: 3,
+            animation: 'pulse 2s infinite',
+          }}
+        />
+      </Box>
 
-        {/* Content Section */}
-        <div className="p-6">
-          {/* Teams Section */}
-          <div className="mb-4">
-            {team2 ? (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-white text-lg font-bold truncate flex-1 mr-2">
-                    {team1}
-                  </span>
-                  <div className="bg-white/20 rounded-full px-3 py-1">
-                    <span className="text-white text-sm font-bold">VS</span>
-                  </div>
-                  <span className="text-white text-lg font-bold truncate flex-1 ml-2 text-right">
-                    {team2}
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <h2 className="text-xl font-bold text-white mb-2 leading-tight">
-                {title}
-              </h2>
+      <CardContent sx={{ flexGrow: 1, p: 3 }}>
+        {team2 ? (
+          <Stack spacing={1} mb={2}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Typography variant="h6" noWrap sx={{ flex: 1, mr: 1 }}>
+                {team1}
+              </Typography>
+              <Chip label="VS" color="primary" size="small" sx={{ fontWeight: 'bold' }} />
+              <Typography variant="h6" noWrap sx={{ flex: 1, ml: 1, textAlign: 'right' }}>
+                {team2}
+              </Typography>
+            </Box>
+            {league && (
+              <Typography variant="body2" color="text.secondary" noWrap>
+                League: {league}
+              </Typography>
             )}
-          </div>
+          </Stack>
+        ) : (
+          <Typography variant="h6" gutterBottom>
+            {title}
+          </Typography>
+        )}
 
-          {/* Date and Time */}
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-2 text-blue-200">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span className="text-sm font-medium">{formattedDate}</span>
-            </div>
-          </div>
+        <Typography variant="body2" color="text.secondary" gutterBottom>
+          {formattedDate}
+        </Typography>
 
-          {/* Action Buttons */}
-          <div className="flex space-x-3">
-            <button className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-4 rounded-xl font-semibold text-sm hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
-              Watch Live
-            </button>
-            <button className="bg-white/20 hover:bg-white/30 text-white p-3 rounded-xl transition-all duration-200 hover:scale-105">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        {location && (
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            Location: {location}
+          </Typography>
+        )}
 
-        {/* Hover Effect Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent transition-opacity duration-500 ${
-          isHovered ? 'opacity-100' : 'opacity-0'
-        }`}></div>
-      </div>
-    </div>
+        {description && (
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            {description}
+          </Typography>
+        )}
+      </CardContent>
+
+      <Box sx={{ display: 'flex', gap: 1, p: 2 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          startIcon={<LiveTvIcon />}
+          sx={{ fontWeight: 'bold' }}
+        >
+          Watch Live
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          startIcon={<FavoriteIcon />}
+          sx={{ fontWeight: 'bold' }}
+        >
+          Favorite
+        </Button>
+      </Box>
+
+      <style>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+      `}</style>
+    </Card>
   );
 }
 
