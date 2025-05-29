@@ -34,10 +34,8 @@ I chose **Soccer** as the sport and built a **responsive web app** that displays
 
 ## 🖼️ Project Screenshots
 
-### 🎯 UI Output
-![UI Output 1](screenshots/output-1.png)  
-![UI Output 2](screenshots/output-2.png)  
-![UI Output 3](screenshots/output-3.png)
+<p align="center"> <img src="screenshots/output-1.png" alt="UI Output 1" width="250"/> <img src="screenshots/output-2.png" alt="UI Output 2" width="250"/> <img src="screenshots/output-3.png" alt="UI Output 3" width="250"/> </p>
+
 
 ### 🧪 Postman Test
 ![Postman Test](postman/test-1.png)
