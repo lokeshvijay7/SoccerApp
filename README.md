@@ -36,10 +36,13 @@ I have used a public soccer API for upcoming matches:
 ## 🖼️ Project Screenshot
 
 ### 🎯 Output UI
+![UI Output](screenshots\output-1.png)
+![UI Output](screenshots\output-2.png)
 ![UI Output](screenshots\output-3.png)
 
+
 ### 🧪 Postman Test
-![Postman Test](postman/postman_ss.png)
+![Postman Test](postman/test-1.png)
 
 ---
 
