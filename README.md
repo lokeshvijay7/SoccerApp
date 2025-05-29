@@ -24,7 +24,7 @@ I chose **Soccer** as the sport and built a **responsive web app** that displays
 
 ---
 
-## -> API Used
+## API Used
 
 **API:** [https://www.scorebat.com/video-api/v3/](https://www.scorebat.com/video-api/v3/)
 
@@ -32,17 +32,17 @@ I chose **Soccer** as the sport and built a **responsive web app** that displays
 
 ---
 
-## -> Project Screenshots
+## Project Screenshots
 
 <p align="center"> <img src="screenshots/output-1.png" alt="UI Output 1" width="300"/> <img src="screenshots/output-2.png" alt="UI Output 2" width="300"/> <img src="screenshots/output-3.png" alt="UI Output 3" width="300"/> </p>
 
 
-### -> Postman Test
+### Postman Test
 <p align="center"> <img src="postman/test-1.png" alt="Postman Test" width="400"/> </p>
 
 ---
 
-## -> Tech Stack
+## Tech Stack
 
 | Frontend           | Backend             | Tools               |
 |--------------------|---------------------|---------------------|
@@ -50,7 +50,7 @@ I chose **Soccer** as the sport and built a **responsive web app** that displays
 
 ---
 
-## -> How to Run the Project
+## How to Run the Project
 
 1. Clone the repository:
 ```bash
@@ -59,7 +59,7 @@ cd SoccerApp
 
 ---
 
-## -> Developer Info
+Developer Info
  Name: Lokesh K V
  Email: loki7cr@gmail.com
  GitHub: github.com/lokeshvijay7
