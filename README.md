@@ -59,7 +59,4 @@ cd SoccerApp
 
 ---
 
-Developer Info
- Name: Lokesh K V
- Email: loki7cr@gmail.com
- GitHub: github.com/lokeshvijay7
+
