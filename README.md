@@ -4,7 +4,7 @@ This is my submission for the **Full Stack Development Internship at SportsOrca*
 
 ---
 
-## 📝 Task Brief
+## 📝 Task 
 
 A responsive full-stack web app to view live soccer matches, teams, and details with real-time search functionality.
 
