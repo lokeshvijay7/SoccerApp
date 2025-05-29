@@ -4,28 +4,27 @@ This is my submission for the **Full Stack Development Internship at SportsOrca*
 
 ---
 
-## 📝 Task 
+## 📝 Task
 
-A responsive full-stack web app to view live soccer matches, teams, and details with real-time search functionality.
-
+A responsive full-stack web app to view upcoming soccer matches, teams, and match details, with real-time search functionality.
 
 ---
 
 ## ✅ What I Have Built
 
-I chose **Soccer** as the sport and built a **responsive web app** that displays upcoming soccer matches with:
+I chose **Soccer** as the sport and built a **responsive web app** that displays upcoming matches with:
 
-- 🧠 **Real-time Search**: Filter teams instantly
+- 🧠 **Real-time Search**: Instantly filter matches by team
 - 🧾 **Match Info**: Team names and match date/time
-- 🌐 **Freely Available API** used for fetching data
-- 🖥️ **Backend** with Express.js to serve the data
-- 📸 **Clean UI** and fully tested with Postman
+- 🌐 **Public API** for live match data
+- 🖥️ **Backend** using Node.js and Express.js
+- ⚛️ **Frontend** built with React.js
+- 🧪 **Tested** using Postman
+- 📸 **Clean and responsive UI**
 
 ---
 
 ## 🌐 API Used
-
-I have used a public soccer API for upcoming matches:
 
 **API:** [https://www.scorebat.com/video-api/v3/](https://www.scorebat.com/video-api/v3/)
 
@@ -33,13 +32,12 @@ I have used a public soccer API for upcoming matches:
 
 ---
 
-## 🖼️ Project Screenshot
+## 🖼️ Project Screenshots
 
-### 🎯 Output UI
-![UI Output](screenshots/output-1.png)
-![UI Output](screenshots/output-2.png)
-![UI Output](screenshots/output-3.png)
-
+### 🎯 UI Output
+![UI Output 1](screenshots/output-1.png)  
+![UI Output 2](screenshots/output-2.png)  
+![UI Output 3](screenshots/output-3.png)
 
 ### 🧪 Postman Test
 ![Postman Test](postman/test-1.png)
@@ -48,30 +46,15 @@ I have used a public soccer API for upcoming matches:
 
 ## 🚀 Tech Stack
 
-| Frontend | Backend (Optional) | Tools |
-|----------|--------------------|-------|
-| HTML, CSS, JS | Node.js, Express.js | Postman, Git, GitHub |
+| Frontend           | Backend             | Tools               |
+|--------------------|---------------------|---------------------|
+| React.js, HTML, CSS, JavaScript | Node.js, Express.js  | Postman, Git, GitHub |
 
 ---
 
-## 📮 How to Run
+## 📮 How to Run the Project
 
-1. Clone the repo:
+1. Clone the repository:
 ```bash
 git clone https://github.com/lokeshvijay7/SoccerApp.git
 cd SoccerApp
-
-2.Frontend
-cd frontend
-npm run dev
-
-3.Backend 
-cd backend
-npm run dev
-
----
-
-Developer Info
- Name: Lokesh K V
- Email: loki7cr@gmail.com
- GitHub: github.com/lokeshvijay7
